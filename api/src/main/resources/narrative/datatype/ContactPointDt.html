@@ -1,0 +1,4 @@
+ <span class="ContactPoint">
+  <span class="system" th:if="${not resource.systemElement.empty}" th:text="${resource.system}"></span>
+  <span class="value" th:if="${not resource.valueElement.empty}" th:text="${resource.value}"></span>
+</span>

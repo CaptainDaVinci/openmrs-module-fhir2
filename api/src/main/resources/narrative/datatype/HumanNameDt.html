@@ -1,0 +1,6 @@
+ <span class="HumanName">
+  <span class="prefix" th:each="prefix: ${resource.prefix}" th:text="${prefix} + ' '"></span>
+  <span class="family" th:if="${not resource.familyElement.empty}" th:text="${resource.family} + ' '"></span>
+  <span class="given" th:each="given: ${resource.given}" th:text="${given} + ' '"></span> 
+  <span class="suffix" th:each="suffix: ${resource.suffix}" th:text="${suffix}"></span> 
+</span>

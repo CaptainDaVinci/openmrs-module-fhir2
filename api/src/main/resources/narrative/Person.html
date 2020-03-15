@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <ul>
+  	<li th:if="${resource.id}">
+  	  <span class="label">ID </span>
+  	  <span th:text="${resource.id}"></span>
+  	</li>
+  	<li th:if="${not resource.name.empty}">
+		<span class="label">Name(s)</span>
+  		<ul>
+		  <li th:each="name : ${resource.name}"><th:block th:narrative="${name}" /></li>
+  		</ul>
+  	</li>
+  	<li th:if="${not resource.birthDateElement.empty}">
+		<span class="label">Birth Date </span>
+		<th:block th:narrative="${resource.birthDateElement}" />
+  	</li>
+  	<li th:if="${not resource.genderElement.empty}">
+  		<span class="label">Gender </span>
+  		<span class="gender" th:text="${resource.gender.getDisplay()}"></span>
+  	</li>
+  	<li th:if="${not resource.address.empty}">
+		<span class="label">Addresses</span>
+  		<ul>
+		  <li th:each="address : ${resource.address}"><th:block th:narrative="${address}" /></li>
+  		</ul>
+  	</li>
+	<li>
+		<span class="label">Active </span>
+		<span class="active" th:if="resource.active">True</span>
+		<span class="notActive" th:if="not resource.active">False</span>
+	</li>
+	<li th:if="${not resource.telecom.empty}">
+		<span class="label">Telecom(s) </span>
+		<ul>
+			<li th:each="telecom: ${resource.telecom}"><th:block th:narrative="${telecom}" /></li>
+		</ul>
+	</li>
+	<li th:if="${not resource.link.empty}">
+		<span class="label">Link</span>
+		<ul>
+			<li th:each="link : ${resource.link}">
+				<span class="label">Target </span><th:block th:narrative="${link.target}" />
+			</li>
+		</ul>
+	</li>
+  </ul>
+</div>

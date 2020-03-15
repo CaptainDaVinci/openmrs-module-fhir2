@@ -1,0 +1,8 @@
+<span class="CodeableConcept">
+  <span class="text" th:if="${not resource.textElement.empty}" th:text="${resource.text}"></span>
+  <th:block th:if="${resource.textElement.empty}">
+    <ul class="coding" th:if="${not resource.codingElement.empty}">
+	  <li th:each="coding: ${resource.coding}" th:narrative="${coding}"></li>
+	</ul>
+  </th:block>
+</span>

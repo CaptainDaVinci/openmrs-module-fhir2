@@ -1,0 +1,4 @@
+<a class="Reference" th:href="@{${resource.id}}">
+  <th:block th:if="${not resource.displayElement.empty}" th:text="${resource.display}"/>
+  <th:block th:if="${resource.displayElement.empty}" th:text="link"/>
+</a>

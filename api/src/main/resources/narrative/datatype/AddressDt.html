@@ -1,0 +1,7 @@
+<span class="AddressDt">
+  <span class="line" th:each="line: ${resource.line}" th:text="${line}"></span><br/>
+  <span class="city" th:if="${not resource.cityElement.empty}" th:text="${resource.city} + ' '"></span>
+  <span class="state" th:if="${not resource.stateElement.empty}" th:text="${resource.state} + ' '"></span>
+  <span class="country" th:if="${not resource.countryElement.empty}" th:text="${resource.country} + ' '"></span>
+  <span class="postalCode" th:if="${not resource.postalCodeElement.empty}" th:text="${resource.postalCode}"></span>
+</span>

@@ -1,0 +1,6 @@
+<span class="coding">
+  <span class="display" th:if="${not resource.displayElement.empty}" th:text="${resource.display}"></span>
+  <th:block th:if="${resource.displayElement.empty}">
+	<span class="code" th:if="${not resource.codeElement.empty}" th:text="${resource.code}"></span>
+  </th:block>
+</span>
